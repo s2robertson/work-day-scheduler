@@ -42,7 +42,7 @@ $(function () {
         const key = _this.attr('id');
         const value = localStorage.getItem(key);
         if (value) {
-            _this.children('.description')
+            _this.children('.description').val(value);
         }
     })
 
