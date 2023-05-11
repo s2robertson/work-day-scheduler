@@ -6,9 +6,9 @@ $(function () {
      * take the current value of the textarea, and save it in localStorage
      * keyed to the time-block's id */
     $('.time-block .saveBtn').on('click', function() {
-        const _this = $(this);
-        const key = _this.parent().attr('id');
-        const value = _this.prev().val();
+        const buttonEl = $(this);
+        const key = buttonEl.parent().attr('id');
+        const value = buttonEl.prev().val();
         localStorage.setItem(key, value);
     })
 
@@ -17,25 +17,25 @@ $(function () {
     const now = dayjs();
     const nowHour = now.hour();
     $('.time-block').each(function() {
-        const _this = $(this);
-        const elemHour = _this.attr('id').substring(5);
+        const timeBlockEl = $(this);
+        const elemHour = timeBlockEl.attr('id').substring(5);
         if (elemHour < nowHour) {
-            _this.addClass('past');
+            timeBlockEl.addClass('past');
         } else if (elemHour > nowHour) {
-            _this.addClass('future');
+            timeBlockEl.addClass('future');
         } else {
-            _this.addClass('present');
+            timeBlockEl.addClass('present');
         }
     })
 
     /* Initialize each time-block's textarea from localStorage, using the
      * time-block's id as the key */
     $('.time-block').each(function() {
-        const _this = $(this);
-        const key = _this.attr('id');
+        const timeBlockEl = $(this);
+        const key = timeBlockEl.attr('id');
         const value = localStorage.getItem(key);
         if (value) {
-            _this.children('.description').val(value);
+            timeBlockEl.children('.description').val(value);
         }
     })
 
