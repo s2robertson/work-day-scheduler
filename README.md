@@ -12,6 +12,8 @@ Each block of time includes a textarea for the user to make notes.  The button (
 next to the textarea will save the notes, and if the app is closed and reopened, they will 
 automatically be restored.
 
+[See the scheduler app live.](https://s2robertson.github.io/work-day-scheduler/)
+
 ## Credits
 The initial files were provided by University of Toronto Coding Bootcamp.  Also, the project uses
 the following libraries:
@@ -21,3 +23,6 @@ the following libraries:
 
 ## License
 MIT
+
+## Screenshot
+![A screenshot of the scheduler](./Scheduler-Screenshot.png)
